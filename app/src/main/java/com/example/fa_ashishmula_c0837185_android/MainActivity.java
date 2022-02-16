@@ -25,17 +25,18 @@ com.google.android.material.floatingactionbutton.FloatingActionButton addPlace;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         placesList=findViewById(R.id.lv_List);
         mDB=new DBHelper(this);
         destinations=new ArrayList<>();
-        //displayFavDestinations();
-        setContentView(R.layout.activity_main);
+        displayFavDestinations();
         addPlace=findViewById(R.id.addPlace);
         addPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,MapsActivity.class);
                 startActivity(intent);
+
             }
         });
     }
@@ -58,4 +59,8 @@ com.google.android.material.floatingactionbutton.FloatingActionButton addPlace;
             placesList.setAdapter(destinationAdaptor);
         }
     }
+
+
+
 }
+

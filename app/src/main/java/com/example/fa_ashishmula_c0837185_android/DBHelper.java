@@ -62,7 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
     }
 
-    boolean updatePlaces(int id,String address,double latitude , double longitude,String date){
+    boolean updatePlaces(int id, String address, double latitude, double longitude,String date){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_ADDRESS, address);
